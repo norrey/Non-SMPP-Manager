@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="1.2" 
+              xmlns="http://java.sun.com/xml/ns/javaee" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+    
+    <managed-bean>
+        <managed-bean-name>authenticationBean</managed-bean-name>
+        <managed-bean-class>ke.co.mspace.nonsmppmanager.model.AuthenticationBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>user</managed-bean-name>
+        <managed-bean-class>ke.co.mspace.nonsmppmanager.model.User</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>This is the main page controller for navigation in the application</description>
+        <managed-bean-name>pageController</managed-bean-name>
+        <managed-bean-class>ke.co.mspace.nonsmppmanager.service.PageController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>panelMenuBean</managed-bean-name>
+        <managed-bean-class>ke.co.mspace.nonsmppmanager.model.PanelMenuBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>copyrightYear</managed-bean-name>
+        <managed-bean-class>ke.co.mspace.nonsmppmanager.model.CopyrightYear</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>Scroller in DataTable</description>
+        <managed-bean-name>userScrollerBean</managed-bean-name>
+        <managed-bean-class>ke.co.mspace.nonsmppmanager.model.UserScrollerBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>This is used to manage all user alphanumerics</description>
+        <managed-bean-name>alpha</managed-bean-name>
+        <managed-bean-class>ke.co.mspace.nonsmppmanager.model.Alpha</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>This beans holds SMS OUT data</description>
+        <managed-bean-name>sMSOut</managed-bean-name>
+        <managed-bean-class>ke.co.mspace.nonsmppmanager.model.SMSOut</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <validator>
+        <validator-id>customUsernameValidator</validator-id>
+        <validator-class>ke.co.mspace.nonsmppmanager.service.CustomUsernameValidator</validator-class>
+    </validator>
+    
+    <!-- Navigation Rules -->
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>manager</from-outcome>
+            <to-view-id>/manager/ControlPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>invalidCredentials</from-outcome>
+            <to-view-id>/index.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule >
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>loggedin</from-outcome>
+            <to-view-id>/manager/ControlPage.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/index.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>addUser</from-outcome>
+            <to-view-id>/manager/newUser.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>viewUsers</from-outcome>
+            <to-view-id>/manager/showUsers.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>fileUploadBean</managed-bean-name>
+        <managed-bean-class>trial.FileUploadBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+</faces-config>

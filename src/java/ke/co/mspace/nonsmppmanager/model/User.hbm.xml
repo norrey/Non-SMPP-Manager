@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ke.co.mspace.nonsmppmanager.model">
+
+    <class name="User" table="tUSER">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="username" />
+        <property name="password" />
+        <property name="smsCredits" column="max_total"/>
+        <property name="userMobile" column="contact_number"/>
+        <property name="organization" column="organization"/>
+        <property name="userEmail" column="email_address"/>
+        <property name="enableEmailAlertWhenCreditOver" column="enable_email_alert"/>
+        <property name="endDate" column="end_date"/>
+        <property name="startDate" column="start_date"/>
+        <property name="admin"/>
+        
+		
+    </class>
+
+</hibernate-mapping>

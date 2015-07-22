@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ke.co.mspace.nonsmppmanager.model">
+
+    <class name="SMSOut" table="tSMSOUT">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="rid"/>
+        <property name="seqNo" column="seqNo"/>
+        <property name="serviceType" column="service_type"/>
+        <property name="sourceAddr" column="source_addr"/>
+        <property name="destinationAddr" column="destination_addr"/>
+        <property name="messagePayload" column="message_payload"/>
+        <property name="userMessageReference" column="user_message_reference"/>
+        <property name="timeSubmitted" column="time_submitted"/>
+        <property name="timeProcessed" column="time_processed"/>
+        <property name="status" column="status"/>
+        <property name="errorinfo" column="errorinfo"/>
+        <property name="messageId" column="message_id"/>
+        <property name="sentby" column="sentby"/>
+        <property name="esmClass" column="esm_class"/>        
+        <property name="rule" column="rule"/>
+        <property name="user" column="user"/>
+        <property name="submittedby" column="submittedby"/>
+
+
+       
+        
+    </class>
+
+</hibernate-mapping>
